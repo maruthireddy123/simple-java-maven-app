@@ -73,7 +73,7 @@
             <configuration>
               <rules>
                 <requireMavenVersion>
-                  <version>[3.8.1,)</version> <!-- Ensure Maven 3.6.0 or higher -->
+                  <version>[3.10.0,)</version> <!-- Ensure Maven 3.6.0 or higher -->
                 </requireMavenVersion>
                 <requireJavaVersion>
                   <version>[17,)</version> <!-- Ensure Java 17 or higher -->
