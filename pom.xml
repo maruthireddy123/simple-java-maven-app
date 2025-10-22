@@ -1,8 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <!-- Group and Artifact Information -->
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <packaging>jar</packaging>
@@ -10,7 +10,6 @@
   <name>my-app</name>
   <url>https://maven.apache.org</url>
 
-  <!-- Dependencies -->
   <dependencies>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
@@ -20,30 +19,27 @@
     </dependency>
   </dependencies>
 
-  <!-- Properties -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>17</maven.compiler.source> <!-- Set Java source version -->
-    <maven.compiler.target>17</maven.compiler.target> <!-- Set Java target version -->
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <build>
     <pluginManagement>
       <plugins>
-        <!-- Maven Compiler Plugin to compile Java 17 -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.1</version> <!-- Ensure a newer version of the compiler plugin -->
+          <version>3.8.1</version>
           <configuration>
-            <release>17</release> <!-- Set release to Java 17 -->
+            <release>17</release>
           </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
 
     <plugins>
-      <!-- Build an executable JAR -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
@@ -59,11 +55,10 @@
         </configuration>
       </plugin>
 
-      <!-- Maven Enforcer Plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.0.0-M3</version> <!-- Use a version compatible with older Maven versions -->
+        <version>3.0.0-M3</version>
         <executions>
           <execution>
             <id>enforce-maven</id>
@@ -73,10 +68,10 @@
             <configuration>
               <rules>
                 <requireMavenVersion>
-                  <version>[3.9.10,)</version> <!-- Ensure Maven 3.6.0 or higher -->
+                  <version>[3.6.0,)</version> <!-- Changed from [3.9.10,) to [3.6.0,) -->
                 </requireMavenVersion>
                 <requireJavaVersion>
-                  <version>[17,)</version> <!-- Ensure Java 17 or higher -->
+                  <version>[17,)</version>
                 </requireJavaVersion>
               </rules>
             </configuration>
